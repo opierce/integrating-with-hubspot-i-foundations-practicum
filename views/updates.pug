@@ -1,7 +1,29 @@
 doctype html
 html 
     head 
-        title= `${title}`
+        title=`${title}`
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet", href="/css/style.css")
-    body
+    body 
+    h3
+        a(href="/") < Return to the homepage
+    .form-wrapper 
+        h1 Add a Cat 
+        form(action="/update-cobj" method="POST") 
+            label(for="name") Cat Name 
+            input(type="text" name="name" id="name" required)
+
+            label(for="bio") Cat Bio 
+            input(type="text" name="bio" id="bio")
+
+            label(for="cuteness_level") Cuteness Level
+            input(type="numeric" name="cuteness_level" id="cuteness_level" min=9001 value=9001 required)
+
+            h3 Preferred Food
+            label(for="dry_food") Dry Food
+                input(type="checkbox" name="dry_food" id="dry_food" value="dry_food" checked)
+            
+            label(for="wet_food") Wet Food
+                input(type="checkbox" name="wet_food" id="wet_food" value="wet_food" checked)
+            
+            input(type="submit" value="Submit")
