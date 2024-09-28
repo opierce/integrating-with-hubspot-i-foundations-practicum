@@ -1,0 +1,32 @@
+doctype html
+html 
+    head 
+        title=`${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+    h1 Homepage
+    h3
+        a(href="/update-cobj") Add to this table
+    table 
+        thead
+            th Name 
+            th Bio 
+            th Cuteness Level 
+            th Preferred Food
+        tbody
+            each cat in data
+                tr
+                    td #{cat.properties.name}
+                    td #{cat.properties.bio}
+                    td #{cat.properties.cutness_level} 
+                        //- a(href="") +
+                    td #{cat.properties.preferred_food}
+
+        // cat images if I'm feeling up to it
+        //- tr 
+            //- each cat in data
+                //- td
+                    //- - var catName = #{cat.properties.name}
+                    //- - var imgSource = "img/" + catName + ".jpg"
+                    //- img(src=imgSource, alt="Photo if available")
